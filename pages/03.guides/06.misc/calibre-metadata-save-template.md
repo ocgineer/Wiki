@@ -1,4 +1,4 @@
-## Kavita Save to Disk template
+## Calibre Save to Disk template for Kavita
 
 Kavita requires to have series or individual books to be in their own directory. With the following save template you can have Calibre automatically create these for you, either by the set series name or the book title if no series is set. The filename will be the same, except with the series number added if the book is part of a series. In addition, it will convert any colons, used as sub-title, to a hyphen (assuming you leave a space after the colon).
 
@@ -17,7 +17,7 @@ After having set these settings, Save to Disk will write the selected books to d
 
 **IMAGE OF THE SETTINGS INCLUDING FINALIZED TEMPLATE (ITS STILL WIP)**
 
-## Using the Kavita Save to Disk template
+## Using the Save to Disk template
 
 1. Select the book(s) you want to export that are ready for Kavita (having set the metadata).
 2. Click 'Save to Disk' (the big blue floppy disk).
