@@ -1,3 +1,11 @@
+### Calibre
+
+With [Calibre ebook management](https://calibre-ebook.com/) you can set the metadata correctly in your epubs to be used in Kavita.
+
+Once you loaded the books you want to correct for the use in Kavita into Calibre you can edit the metadata by right-clicking the book and selecting Edit Metadata, or using the hotkey E on your keyboard. In this window make sure the Series and Number (book order in the series) is set correctly if you have multiple books that belong to a single series. Futhermore, also correct the Title and Authors field if nessesary.
+
+Once you are done with the metadata adjustments you can select the books and use Save to Disk > Save only EPUB format to disk in a single folder to export the books with updated metadata. However, to make it easier for you, you can keep on reading to adjust the Save to Disk settings to have automatically the correct directory created for your books.
+
 ## Calibre Save to Disk template for Kavita
 
 Kavita requires to have series or individual books to be in their own directory. With the following save template you can have Calibre automatically create these for you, either by the set series name or the book title if no series is set. The filename will be the same, except with the series number added if the book is part of a series. In addition, it will convert any colons, used as sub-title, to a hyphen (assuming you leave a space after the colon).
@@ -56,3 +64,11 @@ Or nothing.
 `{series:'re(ifempty($,field('title')),':',' -')'}/{series:'re(ifempty($,field('title')),':',' -')'}{series_index:0>2s| |}`
 
 > The Series Name/The Series Name 01.epub
+
+## Adding authors to the filename and directory
+
+If you would like to have the authors added to the directory and filename of the book that is **not** part of a series, or in case you have books that have the same title, you can use the following template instead.
+
+`{series:'re(ifempty($,field('title') & ' - ' & field('authors')),':',' -')'}/{series:'re(ifempty($,field('title') & ' - ' & field('authors')),':',' -')'}{series_index:0>2s| - |}`
+
+> Title of the Book - Author Name/Title of the Book - Author Name.epub
