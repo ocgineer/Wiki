@@ -15,7 +15,7 @@ After having set these settings, Save to Disk will write the selected books to d
 - If having set a series: 'The Series Name/The Series Name - 01.epub'
 - If not having set a series: 'The Title of the Book/The Title of the Book.epub'
 
-**IMAGE OF THE SETTINGS INCLUDING FINALIZED TEMPLATE (ITS STILL WIP)**
+![calibre-saving-books-settings](calibre-saving-books-settings.png)
 
 ## Using the Save to Disk template
 
@@ -34,6 +34,8 @@ By default Calibre will use title_sort when using Save to Disk, this means that,
 2. Click on 'Tweaks' (found under Advanced)
 2. Search for the teak: `save_template_title_series_sorting`
 3. Edit the teak to: `save_template_title_series_sorting = 'strictly_alphabetic'`
+
+![calibre-title-sort-tweak](calibre-title-sort-tweak.png)
 
 ## Adjusting the prefix of the series index
 
