@@ -43,10 +43,16 @@ You can modify the part between the series name and the index if you do wish to 
 
 `{series:'re(ifempty($,field('title')),':',' -')'}/{series:'re(ifempty($,field('title')),':',' -')'}{series_index:0>2s|, Vol. |}`
 
-> Save to Disk result: 'The Series Name/The Series Name, Vol. 01.epub'
+> The Series Name/The Series Name, Vol. 01.epub
 
-Or if you want to have no separator at all between the series and index.
+Or perhaps more like manga.
+
+`{series:'re(ifempty($,field('title')),':',' -')'}/{series:'re(ifempty($,field('title')),':',' -')'}{series_index:0>2s| v|}`
+
+> The Series Name/The Series Name v01.epub
+
+Or nothing.
 
 `{series:'re(ifempty($,field('title')),':',' -')'}/{series:'re(ifempty($,field('title')),':',' -')'}{series_index:0>2s| |}`
 
-> Save to Disk result: 'The Series Name/The Series Name 01.epub'
+> The Series Name/The Series Name 01.epub
