@@ -1,6 +1,6 @@
 ## Kavita Save to Disk template
 
-Kavita requires to have series or individual books to be in their own directory. With the following save template you can have Calibre automatically create this folder for you, either by the set series name or the book title if no series is set. The filename of the book itself will be either the name of the series and the index (number) of the series or the title of the book if no series is set.
+Kavita requires to have series or individual books to be in their own directory. With the following save template you can have Calibre automatically create these for you, either by the set series name or the book title if no series is set. The filename will be the same, except with the series number added if the book is part of a series. In addition, it will convert any colons, used as sub-title, to a hyphen (assuming you leave a space after the colon).
 
 1. Open the Preferences in Calibre
 2. Click on 'Saving books to Disk' (found under Import/Export)
@@ -9,17 +9,17 @@ Kavita requires to have series or individual books to be in their own directory.
 5. Make sure 'Save metadata in separate OPF file' is **unchecked**.
 6. Adjust the 'Save template' to the following value;
 
-`{series:'ifempty($,field('title'))'}/{series:'ifempty($,field('title'))'}{series_index:0>2s|, Vol. |}`
+`{series:'re(ifempty($,field('title')),':',' -')'}/{series:'re(ifempty($,field('title')),':',' -')'}{series_index:0>2s| - |}`
 
 After having set these settings, Save to Disk will write the selected books to disk as;
-- If having set a series: 'The Series Name/The Series Name, Vol. 01.epub'
+- If having set a series: 'The Series Name/The Series Name - 01.epub'
 - If not having set a series: 'The Title of the Book/The Title of the Book.epub'
 
 **IMAGE OF THE SETTINGS INCLUDING FINALIZED TEMPLATE (ITS STILL WIP)**
 
 ## Using the Kavita Save to Disk template
 
-1. Select the book(s) you want to export that are ready for Kavita (having set the metadata)
+1. Select the book(s) you want to export that are ready for Kavita (having set the metadata).
 2. Click 'Save to Disk' (the big blue floppy disk).
 3. Now select a directory to save to, this can already be the root directory of your Kavita Library!
 4. Move the created directories (with books) to your Kavita library root directory, if needed.
@@ -37,12 +37,14 @@ By default Calibre will use title_sort when using Save to Disk, this means that,
 
 ## Adjusting the prefix of the series index
 
-You can modify the prefix of the series_index to adjust the filename to your preference, for example, if you do not like to have ` Vol. ` you can change the template to the following.
+You can modify the part between the series name and the index if you do wish to have this different. Take note that this does not affect the metadata shown in Kavita and is purely (aesthetic) for the filename. For example, if you want to have `, Vol. ` instead of a hyphen you can change the template to the following.
 
-`{series:'ifempty($,field('title'))'}/{series:'ifempty($,field('title'))'}{series_index:0>2s| |}`
+`{series:'re(ifempty($,field('title')),':',' -')'}/{series:'re(ifempty($,field('title')),':',' -')'}{series_index:0>2s|, Vol. |}`
+
+> Save to Disk result: 'The Series Name/The Series Name, Vol. 01.epub'
+
+Or if you want to have no separator at all between the series and index.
+
+`{series:'re(ifempty($,field('title')),':',' -')'}/{series:'re(ifempty($,field('title')),':',' -')'}{series_index:0>2s| |}`
 
 > Save to Disk result: 'The Series Name/The Series Name 01.epub'
-
-`{series:'ifempty($,field('title'))'}/{series:'ifempty($,field('title'))'}{series_index:0>2s| - |}`
-
-> Save to Disk result: 'The Series Name/The Series Name - 01.epub'
