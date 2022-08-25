@@ -4,7 +4,7 @@ With [Calibre ebook management](https://calibre-ebook.com/) you can set the meta
 
 Once you loaded the books you want to correct for the use in Kavita into Calibre you can edit the metadata by right-clicking the book and selecting Edit Metadata, or using the hotkey E on your keyboard. In this window make sure the Series and Number (book order in the series) is set correctly if you have multiple books that belong to a single series. Futhermore, also correct the Title and Authors field if nessesary.
 
-Once you are done with the metadata adjustments you can select the books and use Save to Disk > Save only EPUB format to disk in a single folder to export the books with updated metadata. However, to make it easier for you, you can keep on reading to adjust the Save to Disk settings to have automatically the correct directory created for your books.
+Once you are done with the metadata adjustments you can select the books and use Save to Disk > Save only EPUB format to disk in a single folder to export the books with updated metadata. However, to make it easier for you, you can keep on reading to adjust the Save to Disk settings to have automatically the correct directory created for your books that you can directly use in your Kavita library!
 
 ## Calibre Save to Disk template for Kavita
 
