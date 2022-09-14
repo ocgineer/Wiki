@@ -19,11 +19,22 @@ Kavita requires to have series or individual books to be in their own directory.
 
 `{series:'re(ifempty($,field('title')),':',' -')'}/{series:'re(ifempty($,field('title')),':',' -')'}{series_index:0>2s| - |}`
 
-After having set these settings, Save to Disk will write the selected books to disk as;
-- If having set a series: 'The Series Name/The Series Name - 01.epub'
-- If not having set a series: 'The Title of the Book/The Title of the Book.epub'
-
 ![calibre-saving-books-settings](calibre-saving-books-settings.png)
+
+After having set these settings, Save to Disk will write the selected books to disk as;
+```
+Save to Disk target
+└── Series Name A
+    └── Series Name A - 01.epub
+    └── Series Name A - 02.epub
+└── Series Name B
+    └── Series Name B - 01.epub
+└── Title of a Book
+    └── Title of a Book.epub
+└── Some other Book
+    └── Some other Book.epub
+```
+_Depending if the book has a series or not, if no series then it will use the title of the book._
 
 ## Using the Save to Disk template
 
